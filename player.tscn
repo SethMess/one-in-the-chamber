@@ -24,3 +24,8 @@ shape = SubResource("CircleShape2D_onrkg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeArea"]
 position = Vector2(94, 0)
 shape = SubResource("CapsuleShape2D_i3pqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="MeleeArea"]
+position = Vector2(95, -0.4999981)
+scale = Vector2(0.5390625, 0.89843756)
+texture = ExtResource("1_4flbx")

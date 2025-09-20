@@ -17,6 +17,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func melee_attack():
+	print("melee")
 	# Enable the hitbox
 	melee_area.monitoring = true
 	melee_shape.disabled = false
@@ -30,4 +31,5 @@ func melee_attack():
 
 
 func shoot():
+	print("shooting")
 	pass
