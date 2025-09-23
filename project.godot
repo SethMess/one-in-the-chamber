@@ -13,7 +13,7 @@ config_version=5
 config/name="One in the chamber"
 run/main_scene="uid://dl0yhfcq5aqhe"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://scenes/icon.svg"
 
 [input]
 

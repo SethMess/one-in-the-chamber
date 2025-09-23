@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8i53layvx2s5"]
+
+[ext_resource type="Texture2D" uid="uid://c840qw2lgvo7y" path="res://scenes/icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bp7kkh03k5ll0" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://02k17fl7ses3" path="res://scenes/melee.tscn" id="3_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 64.070274
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Melee" parent="." instance=ExtResource("3_qhqgy")]
+position = Vector2(64, 0)
+rotation = 1.5707964
