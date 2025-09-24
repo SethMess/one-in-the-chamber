@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var melee = $Melee
-@onready var melee_shape = $MeleeArea/CollisionShape2D
+@onready var gun = $Gun
+
 var speed = 400
 
 func _physics_process(delta):
@@ -19,18 +20,9 @@ func _physics_process(delta):
 func melee_attack():
 	print("melee")
 	melee.attack()
-	# Enable the hitbox
-	#melee_area.monitoring = true
-	#melee_shape.disabled = false
-	#
-	## Play animation if you have one (optional)
-	#
-	## Disable again after a short delay
-	#await get_tree().create_timer(0.2).timeout
-	#melee_area.monitoring = false
-	#melee_shape.disabled = true
+
 
 
 func shoot():
 	print("shooting")
-	pass
+	gun.shoot()

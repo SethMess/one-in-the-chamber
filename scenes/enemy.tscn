@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://brktyyg3ml4te"]
 
 [ext_resource type="Script" uid="uid://c56l7tbpan3ly" path="res://scripts/enemy.gd" id="1_4ra3w"]
-[ext_resource type="Texture2D" uid="uid://c840qw2lgvo7y" path="res://scenes/icon.svg" id="2_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://c840qw2lgvo7y" path="res://icon.svg" id="2_5uy6h"]
 [ext_resource type="Script" uid="uid://bku326gjusbje" path="res://scripts/HurtBox.gd" id="3_c4w8v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iifgy"]
@@ -23,6 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qi2p4"]
 resource_name = "hit"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,7 +31,7 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"times": PackedFloat32Array(0, 0.06666667, 0.23333333, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.3490658503988659, -0.3490658503988659, 0.0]
@@ -46,7 +47,7 @@ _data = {
 script = ExtResource("1_4ra3w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.296875, 0.296875)
+scale = Vector2(0.55191505, 0.55191505)
 texture = ExtResource("2_5uy6h")
 
 [node name="HurtBox" type="Area2D" parent="Sprite2D"]

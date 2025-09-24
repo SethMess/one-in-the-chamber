@@ -1,45 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8i53layvx2s5"]
 
 [ext_resource type="Texture2D" uid="uid://c840qw2lgvo7y" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bp7kkh03k5ll0" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="PackedScene" uid="uid://02k17fl7ses3" path="res://scenes/melee.tscn" id="3_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://b86udk2igm3y4" path="res://scenes/gun.tscn" id="4_dqkch"]
-
-[sub_resource type="GDScript" id="GDScript_qhqgy"]
-script/source = "extends CharacterBody2D
-
-@onready var melee = $Melee
-@onready var gun = $Gun
-
-var speed = 400
-
-func _physics_process(delta):
-	var direction = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
-	velocity = direction * speed
-	
-	if Input.is_action_just_pressed(\"shoot\"): #define these
-		shoot()
-	if Input.is_action_just_pressed(\"melee\"): #define these
-		melee_attack()
-	
-	look_at(get_global_mouse_position())
-	move_and_slide()
-
-func melee_attack():
-	print(\"melee\")
-	melee.attack()
-
-
-
-func shoot():
-	print(\"shooting\")
-	gun.shoot()
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 64.070274
 
 [node name="Player" type="CharacterBody2D"]
-script = SubResource("GDScript_qhqgy")
+script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4flbx")

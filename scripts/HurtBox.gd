@@ -8,10 +8,9 @@ func _init() -> void:
 
 
 func _ready() -> void:
-	#connect("area_entered", self, "_on_area_entered")
-	#Signal.connect(_on_area_entered(
-	#))
-	pass #fix
+	# Connect the signal properly
+	area_entered.connect(_on_area_entered)
+
 
 func _on_area_entered(hitbox: HitBox) -> void:
 	if hitbox == null:

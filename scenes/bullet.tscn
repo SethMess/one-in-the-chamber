@@ -1,18 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnysmj7wyi5xi"]
+[gd_scene load_steps=5 format=3 uid="uid://bx8rbc1hbqfkt"]
 
-[ext_resource type="Texture2D" uid="uid://c840qw2lgvo7y" path="res://scenes/icon.svg" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://ck2jpn51eooyb" path="res://scripts/bullet.gd" id="1_l5glv"]
+[ext_resource type="Texture2D" uid="uid://c840qw2lgvo7y" path="res://icon.svg" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://becv6e2l5cgwy" path="res://scripts/HitBox.gd" id="3_eoqba"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8qja"]
-radius = 24.0
-height = 48.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4vbm"]
 
-[node name="Bullet" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CapsuleShape2D_v8qja")
+[node name="bullet" type="Node2D"]
+script = ExtResource("1_l5glv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3515625, 0.3515625)
+scale = Vector2(0.13930887, 0.13930887)
 texture = ExtResource("1_v7oki")
+
+[node name="HitBox" type="Area2D" parent="Sprite2D"]
+script = ExtResource("3_eoqba")
+metadata/_custom_type_script = "uid://becv6e2l5cgwy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HitBox"]
+rotation = 0.0102147525
+scale = Vector2(7.7938113, 5.1323276)
+shape = SubResource("CapsuleShape2D_t4vbm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
